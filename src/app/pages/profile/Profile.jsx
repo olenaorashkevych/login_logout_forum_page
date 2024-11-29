@@ -1,10 +1,24 @@
 import styles from "./Profile.module.css";
-import { UserContext } from "../../App"
-import { useContext } from "react";
+import { UserContext } from "../../App";
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
-    const { user } =
-        useContext(UserContext);
+    const navigate = useNavigate();
+    const { user } = useContext(UserContext);
+
+    useEffect(() => {
+        // перевіряємо чи є користувач
+        if (user === null) {
+            navigate("/");
+        }
+    }, [user, navigate]);
+
+    // Якщо user === null, не рендеримо нічого, поки не виконається navigate
+    if (user === null) {
+        return null;
+    }
+
     return (
         <div className={styles.container}>
             <h1 className={styles.heading}>Profile</h1>

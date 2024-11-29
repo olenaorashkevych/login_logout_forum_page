@@ -43,13 +43,10 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path='login' element={user ? <Logedin /> : < Login />} />
-            <Route path='register' element={user ? <Registered /> : <Register />} />
-            <Route
-              path="profile"
-              element={user ? <Profile /> : <Login />}
-            />
-            <Route path='logout' element={user ? <Logout /> : <Home />} />
+            <Route path='login' element={< Login />} />
+            <Route path='register' element={<Register />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path='logout' element={<Logout />} />
             <Route path='*' element={<Errorpage />} />
             <Route path="logedin" element={<Logedin />} />
             <Route path="registered" element={<Registered />} />

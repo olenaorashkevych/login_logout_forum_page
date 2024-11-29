@@ -6,12 +6,20 @@ import { UserContext } from "../../App";
 
 function Login() {
 
-    const { setuser } = useContext(UserContext);
+    const { user, setuser } = useContext(UserContext);
     const navigate = useNavigate();
     const [formdata, setformdata] = useState({
         email: '',
         password: ''
     })
+
+
+    // перевіряємо чи маємо дані користувача
+    if (user !== null) {
+        navigate("/");
+        return;
+    }
+
 
     const saveformdata = (e) => {
         setformdata({ ...formdata, [e.target.name]: e.target.value });
