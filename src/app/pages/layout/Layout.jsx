@@ -9,7 +9,7 @@ function Layout() {
     return (
         <>
             <header className={styles.header}>
-                <h1>My App</h1>
+                <h1>My App 222</h1>
                 <nav className={styles.nav}>
                     <Link to="/" className={styles.navLink}>Home</Link>
                     {
