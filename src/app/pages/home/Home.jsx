@@ -20,7 +20,7 @@ function Home() {
 
     return (
         <div className={styles.container}>
-            <h1 className={styles.heading}>Welcome to the Home Page 222</h1>
+            <h1 className={styles.heading}>Welcome to the Home Page</h1>
             <p className={styles.text}>This is the home page of our app.</p>
 
             <section className={styles.commentsSection}>
